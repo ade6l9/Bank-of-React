@@ -31,17 +31,18 @@ class App extends Component {
   async componentDidMount() {
     try {
       const creditsResponse = await fetch('https://johnnylaicode.github.io/api/credits.json');
-      const creditList = await creditsResponse.json();
+      const credits = await creditsResponse.json(); 
       const debitsResponse = await fetch('https://johnnylaicode.github.io/api/debits.json');
-      const debitList = await debitsResponse.json();
+      const debits = await debitsResponse.json();  
       
-      const accountBalance = this.calculateBalance(creditList, debitList);
+      const accountBalance = this.calculateBalance(credits, debits);
       
-      this.setState({ creditList, debitList, accountBalance });
+      this.setState({ credits, debits, accountBalance });
     } catch (error) {
       console.error("Error fetching data", error);
     }
   }
+  
 
   calculateBalance = (creditList, debitList) => {
     const totalCredits = creditList.reduce((sum, credit) => sum + credit.amount, 0);
@@ -57,13 +58,13 @@ class App extends Component {
     };
     
     this.setState(prevState => {
-      const updatedCredits = [...prevState.creditList, newCredit];
+      const updatedCredits = [...prevState.credits, newCredit];
       return {
-        creditList: updatedCredits,
-        accountBalance: this.calculateBalance(updatedCredits, prevState.debitList)
+        credits: updatedCredits,
+        accountBalance: this.calculateBalance(updatedCredits, prevState.debits)
       };
     });
-  }
+  }  
 
   addDebit = (description, amount) => {
     const newDebit = {
@@ -73,13 +74,13 @@ class App extends Component {
     };
     
     this.setState(prevState => {
-      const updatedDebits = [...prevState.debitList, newDebit];
+      const updatedDebits = [...prevState.debits, newDebit];
       return {
-        debitList: updatedDebits,
-        accountBalance: this.calculateBalance(prevState.creditList, updatedDebits)
+        debits: updatedDebits,
+        accountBalance: this.calculateBalance(prevState.credits, updatedDebits)
       };
     });
-  }
+  };  
 
   mockLogIn = (logInInfo) => {  
     const newUser = {...this.state.currentUser};
