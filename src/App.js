@@ -31,9 +31,9 @@ class App extends Component {
   async componentDidMount() {
     try {
       const creditsResponse = await fetch('https://johnnylaicode.github.io/api/credits.json');
-      const credits = await creditsResponse.json();  // Set 'credits' directly
+      const credits = await creditsResponse.json(); 
       const debitsResponse = await fetch('https://johnnylaicode.github.io/api/debits.json');
-      const debits = await debitsResponse.json();    // Set 'debits' directly
+      const debits = await debitsResponse.json(); 
       
       const accountBalance = this.calculateBalance(credits, debits);
       
@@ -42,6 +42,7 @@ class App extends Component {
       console.error("Error fetching data", error);
     }
   }
+  
 
   calculateBalance = (credits, debits) => {
     const totalCredits = credits.reduce((sum, credit) => sum + credit.amount, 0);
@@ -63,7 +64,7 @@ class App extends Component {
         accountBalance: this.calculateBalance(updatedCredits, prevState.debits)
       };
     });
-  }
+  }  
 
   addDebit = (description, amount) => {
     const newDebit = {
@@ -79,7 +80,7 @@ class App extends Component {
         accountBalance: this.calculateBalance(prevState.credits, updatedDebits)
       };
     });
-  }
+  };  
 
   mockLogIn = (logInInfo) => {  
     const newUser = {...this.state.currentUser};
