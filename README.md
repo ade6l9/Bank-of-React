@@ -115,7 +115,7 @@ Data from these endpoints is fetched upon loading the app, and the values are in
 ## Github Pages
 
 
----
+
 ## Contributor
 Adelina Dautovic <br>
 Github: ade6l9
