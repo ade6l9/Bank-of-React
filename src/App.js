@@ -31,9 +31,9 @@ class App extends Component {
   async componentDidMount() {
     try {
       const creditsResponse = await fetch('https://johnnylaicode.github.io/api/credits.json');
-      const credits = await creditsResponse.json(); 
+      const credits = await creditsResponse.json();
       const debitsResponse = await fetch('https://johnnylaicode.github.io/api/debits.json');
-      const debits = await debitsResponse.json();
+      const debits = await debitsResponse.json();   
       
       const accountBalance = this.calculateBalance(credits, debits);
       
