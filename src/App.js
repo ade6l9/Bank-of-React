@@ -54,17 +54,15 @@ class App extends Component {
     const newCredit = {
       description,
       amount: parseFloat(amount),
-      date: new Date().toISOString().split('T')[0]
+      date: new Date().toISOString().split('T')[0],
     };
-    
-    this.setState(prevState => {
+
+    this.setState((prevState) => {
       const updatedCredits = [...prevState.credits, newCredit];
-      return {
-        credits: updatedCredits,
-        accountBalance: this.calculateBalance(updatedCredits, prevState.debits)
-      };
+      const updatedBalance = prevState.accountBalance + newCredit.amount;
+      return { credits: updatedCredits, accountBalance: updatedBalance };
     });
-  }  
+  }; 
 
   addDebit = (description, amount) => {
     const newDebit = {
