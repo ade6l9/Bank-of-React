@@ -1,116 +1,121 @@
-# bank-of-react-starter-code
-This repository is the starter code for Assignment 3 - Bank of React.
+# Bank of React
 
-### Live Link 
-[Website link](https://johnnylaicode.github.io/bank-of-react-starter-code/)
+This project is a **simple banking application** built with **React** that demonstrates the use of **client-side routing** using **React Router**. The application allows users to view and manage their account balance, add credits and debits, and navigate between different pages in the app seamlessly.
 
-----------
-### 1. Use the following process to ***import*** the Assignment 3 starter code repository to your GitHub account as your starter codebase
-1.	Log on to GitHub
-2.	Click on the + sign in the top right corner (next to the user icon)
-3.	In the dropdown menu, select "Import repository"
-4.	A new page will open
-5.	In "Your old repository’s clone URL" field, enter: `https://github.com/johnnylaicode/bank-of-react-starter-code`
-6.	In "Your new repository details" field, enter your own repository name (e.g., "assignment-3")
-7.	Click on the "Begin import" button to start the process
-8.	After the process completed, your new "assignment-3" repository is created – as a completely independent codebase
-9.	From this point on, you can clone your new repository, make changes, create feature branches, and create/merge pull requests
+## Table of Contents
 
-----------
-### 2. Use the information below to ***clone*** the starter codebase to your local machine
-After creating the starter codebase "assignment-3" repository on GitHub (see above), you can clone it to your local machine. The instructions on how to clone a GitHub repository are available at this [link](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository).
+- [Features](#features)
+- [Project Structure](#project-structure)
+- [Installation](#installation)
+- [Deployment](#deployment)
+- [Usage](#usage)
+- [Technologies Used](#technologies-used)
+- [API Endpoints](#api-endpoints)
+- [Future Improvements](#future-improvements)
+- [Github Pages](#github-pages)
+- [Contributor](#contributor)
 
-----------
-### 3. Use the following commands to install dependencies and run the application
+---
+## Features
 
-- First, run this command to install dependencies: ```npm install```
-- Next, run this command to start the React application: ```npm start```
+- **Home Page**: Displays the account balance and links to other pages.
+- **User Profile**: Shows the user's profile information including their name and membership date.
+- **Login**: Allows users to input their username to simulate a login and redirects to the User Profile.
+- **Credits**: Users can add credits with a description and amount. Credits are saved, and the balance updates accordingly.
+- **Debits**: Users can add debits with a description and amount. Debits are saved, and the balance updates accordingly.
+- **Persistent Data**: Credit and debit entries, as well as the updated account balance, persist across page navigations.
 
-**Note: This application uses React Router version 5 and should be compatible with later versions of React Router. If you encounter problems with a later version of React Router, you can specifically install React Router version 5 using the following commands:** 
+---
+
+## Project Structure
+
+```plaintext
+src
+│
+├── components
+│   ├── Home.js          # Home page component
+│   ├── UserProfile.js   # User Profile page component
+│   ├── LogIn.js         # Login page component
+│   ├── Credits.js       # Credits page component
+│   ├── Debits.js        # Debits page component
+│   └── AccountBalance.js # Displays the account balance on various pages
+│
+├── App.js               # Main application component, handles routing and state
+└── index.js             # Entry point for React application
 ```
-npm install react-router-dom@5.3.0 react-router@5.2.1
-npm install react-scripts@latest --legacy-peer-deps 
-``` 
-**Afterward, you can run the ```npm start``` command to start the React application.**
+---
+## Installation
 
-----------
-### 4. Set up and deploy a React application to GitHub Pages
-#### 1. Create a React Application
-1. If you don't already have an existing React application on your local machine, you can create a new React application (e.g., "my-react-app").
+To run this project locally, follow these steps:
 
-    Optionally, you can clone the "bank-of-react-starter-code" repository to your local machine and re-name it "my-react-app."
-2. Start a terminal (e.g., Git Bash) on your local machine.
-3. Go to the "my-react-app" folder.
-4. All the following steps are performed inside the "my-react-app" folder. 
+1. Clone the Repository:
+    ```bash
+   git clone https://github.com/your-username/bank-of-react.git
 
-#### 2. Add "basename" to Router Tag in "App.js" File
-1. In the `App.js` file, located inside the `src` folder, make sure that you add the `basename` path in the `<Router>` tag using the format: `<Router basename="/[repository name]">`
-2. For the "my-react-app" application, it should be: `<Router basename="/my-react-app">`
+2. Navigate to the Project Directory:
+    ```bash
+    cd bank-of-react
 
-#### 3. Install "gh-pages" Package
-1. Install the `gh-pages` package on your local machine by entering the following command in the terminal: `npm install gh-pages --save-dev`
-2. The installation automatically adds the `gh-pages` version number in the "dependencies" section of the `package.json` file.
+3. Install Dependencies:
+    ```bash
+    npm install
+4. Start the Application:
+    ```bash
+    npm start
 
-#### 4. Add "homepage" Property in "package.json" File
-1. In the `package.json` file, add a `homepage` property using the format: `https://[your GitHub username].github.io/[repository name]`
-2. For the "my-react-app" application, it should be:`"homepage": "https://[your GitHub username].github.io/my-react-app/",` 
-    ```
-    {
-    "name": "bank-of-react",
-    "version": "0.1.0",
-    "homepage": "https://[your GitHub username].github.io/my-react-app/",
-    ...
-    }
-    ```
+The app will be available at http://localhost:3000 in your browser.
 
-#### 5. Add Deployment Scripts in "package.json" File
-1. In the `package.json` file, add `predeploy` and `deploy` properties to the "scripts" section as follows:
-    ```
-    "scripts": {
-        "predeploy": "npm run build",
-        "deploy": "gh-pages -d build",
-    ...
-    ```
+---
+## Deployment
 
-#### 6. Add "remote" to Local Repository Pointing to GitHub Repository
-1. Add a `remote` to the local repository by entering the following command in the terminal, using the format: `git remote add origin https://github.com/[your GitHub username]/[repository name].git`
-2. For the "my-react-app" application, it should be:`git remote add origin https://github.com/[your GitHub username]/my-react-app.git` 
+This project is deployed on GitHub Pages. To deploy your own version, follow these steps:
+1. Rub the build command:
+    ```bash
+    npm run build
+2. Deploy the build folder to Github Pages:
+    ```bash
+    npm run deploy
 
-#### 7. Deploy React Application to GitHub Pages
-1. Deploy the "my-react-app" application to GitHub Pages by entering the following command in the terminal: `npm run deploy`
-2. Open a web browser, go to the following address to see your React application on GitHub Pages: `https://[your GitHub username].github.io/my-react-app/` 
+After deploying, your application will be available at https://your-username.github.io/bank-of-react.
 
-<br/>
+---
+## Usage
 
-## Common Errors You May Encounter
-### Error: ERR_OSSL_EVP_UNSUPPORTED
-This error indicates that your application uses an algorithm or key size not supported by OpenSSL 3.0.
-#### Solution: 
-1. If you use *Windows or Linux*, in the `package.json` file, set the "scripts" attributes as follows:
+1. Home Page: Displays the account balance. From here, you can navigate to the User Profile, Credits, or Debits page.
+2. User Profile: Shows the logged-in user's information.
+3. Login: Enter your username, which updates the user profile. On successful login, you'll be redirected to the User Profile page.
+4. Credits: Add a credit with a description and amount. The credit will be saved, and the balance updates accordingly. The added credits remain visible when returning to the Credits page.
+5. Debits: Add a debit with a description and amount. The debit will be saved, and the balance updates accordingly. The added debits remain visible when returning to the Debits page.
 
-```
-  "scripts": {
-  "start": "SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts start", 
-  "build": "SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts build", 
-  ...
-    },
-```
+---
+## Technologies Used
 
-2. If you use *Mac OSX or Linux*, include the following command in the `~/.bash_profile` or `~/.bashrc` file.
+- JavaScript: Core language for building the application's functionality.
+- React: Front-end library for building user interfaces.
+- React Router: Library for handling client-side routing.
+- CSS: Custom styling for components, with responsive and modern design elements.
 
-```
-  export NODE_OPTIONS=--openssl-legacy-provider
-```
+--- 
+## API Endpoints
 
-### Error: React Router Compatibility Issues When Running "npm start" Command
-You may encounter React Router compatibility issues when running the `npm start` command because this application uses React Router version 5. 
-#### Solution: 
-Install React Router version 5 and run the application using the following commands in the specified order: 
+The application uses the following external API endpoints to fetch initial credit and debit data:
 
-```
-  npm install
-  npm install react-router-dom@5.3.0 react-router@5.2.1 
-  npm install react-scripts@latest --legacy-peer-deps 
-  npm start
-```
+- Credits Endpoint: https://johnnylaicode.github.io/api/credits.json
+- Debits Endpoint: https://johnnylaicode.github.io/api/debits.json <br>
+Data from these endpoints is fetched upon loading the app, and the values are integrated into the account balance calculation.
 
+---
+## Future Improvements
+
+- Data Persistence: Implement a backend database to store credits, debits, and user information persistently.
+- Authentication: Add a proper authentication system to handle user logins securely.
+- Advanced Styling: Enhance styling further with animations and better layout for improved user experience.
+
+---
+## Github Pages
+
+
+
+## Contributor
+Adelina Dautovic <br>
+Github: ade6l9
