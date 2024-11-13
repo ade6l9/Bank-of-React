@@ -16,7 +16,6 @@ This project is a **simple banking application** built with **React** that demon
 - [Contributor](#contributor)
 
 ---
-
 ## Features
 
 - **Home Page**: Displays the account balance and links to other pages.
@@ -78,6 +77,7 @@ This project is deployed on GitHub Pages. To deploy your own version, follow the
     npm run deploy
 
 After deploying, your application will be available at https://your-username.github.io/bank-of-react.
+
 ---
 ## Usage
 
@@ -101,7 +101,7 @@ After deploying, your application will be available at https://your-username.git
 The application uses the following external API endpoints to fetch initial credit and debit data:
 
 - Credits Endpoint: https://johnnylaicode.github.io/api/credits.json
-- Debits Endpoint: https://johnnylaicode.github.io/api/debits.json
+- Debits Endpoint: https://johnnylaicode.github.io/api/debits.json <br>
 Data from these endpoints is fetched upon loading the app, and the values are integrated into the account balance calculation.
 
 ---
