@@ -19,8 +19,8 @@ class App extends Component {
     super();
     this.state = {
       accountBalance: 1234567.89,
-      credits: [],    // Use 'credits' here
-      debits: [],     // Use 'debits' here
+      credits: [],    
+      debits: [],     
       currentUser: {
         userName: 'Joe Smith',
         memberSince: '11/22/99',
