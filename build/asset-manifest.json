@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/bank-of-react-starter-code/static/css/main.99f3aaac.chunk.css",
+    "main.js": "/bank-of-react-starter-code/static/js/main.e2fbe937.chunk.js",
+    "main.js.map": "/bank-of-react-starter-code/static/js/main.e2fbe937.chunk.js.map",
+    "runtime-main.js": "/bank-of-react-starter-code/static/js/runtime-main.4db8c5e9.js",
+    "runtime-main.js.map": "/bank-of-react-starter-code/static/js/runtime-main.4db8c5e9.js.map",
+    "static/js/2.70f56a41.chunk.js": "/bank-of-react-starter-code/static/js/2.70f56a41.chunk.js",
+    "static/js/2.70f56a41.chunk.js.map": "/bank-of-react-starter-code/static/js/2.70f56a41.chunk.js.map",
+    "static/js/3.a141be3d.chunk.js": "/bank-of-react-starter-code/static/js/3.a141be3d.chunk.js",
+    "static/js/3.a141be3d.chunk.js.map": "/bank-of-react-starter-code/static/js/3.a141be3d.chunk.js.map",
+    "index.html": "/bank-of-react-starter-code/index.html",
+    "static/css/main.99f3aaac.chunk.css.map": "/bank-of-react-starter-code/static/css/main.99f3aaac.chunk.css.map",
+    "static/js/2.70f56a41.chunk.js.LICENSE.txt": "/bank-of-react-starter-code/static/js/2.70f56a41.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4db8c5e9.js",
+    "static/js/2.70f56a41.chunk.js",
+    "static/css/main.99f3aaac.chunk.css",
+    "static/js/main.e2fbe937.chunk.js"
+  ]
+}
