@@ -19,8 +19,8 @@ class App extends Component {
     super();
     this.state = {
       accountBalance: 1234567.89,
-      credits: [],
-      debits: [],
+      credits: [],    // Use 'credits' here
+      debits: [],     // Use 'debits' here
       currentUser: {
         userName: 'Joe Smith',
         memberSince: '11/22/99',
@@ -33,7 +33,7 @@ class App extends Component {
       const creditsResponse = await fetch('https://johnnylaicode.github.io/api/credits.json');
       const credits = await creditsResponse.json(); 
       const debitsResponse = await fetch('https://johnnylaicode.github.io/api/debits.json');
-      const debits = await debitsResponse.json();  
+      const debits = await debitsResponse.json();    
       
       const accountBalance = this.calculateBalance(credits, debits);
       
@@ -44,9 +44,9 @@ class App extends Component {
   }
   
 
-  calculateBalance = (creditList, debitList) => {
-    const totalCredits = creditList.reduce((sum, credit) => sum + credit.amount, 0);
-    const totalDebits = debitList.reduce((sum, debit) => sum + debit.amount, 0);
+  calculateBalance = (credits, debits) => {
+    const totalCredits = credits.reduce((sum, credit) => sum + credit.amount, 0);
+    const totalDebits = debits.reduce((sum, debit) => sum + debit.amount, 0);
     return parseFloat((totalCredits - totalDebits).toFixed(2));
   }
 
@@ -104,14 +104,14 @@ class App extends Component {
           )} />
           <Route exact path="/credits" render={() => (
             <Credits 
-              credits={this.state.credits} 
+              credits={this.state.credits}  // Use 'credits' instead of 'creditList'
               addCredit={this.addCredit} 
               accountBalance={this.state.accountBalance} 
             />
           )} />
           <Route exact path="/debits" render={() => (
             <Debits 
-              debits={this.state.debits} 
+              debits={this.state.debits}  // Use 'debits' instead of 'debitList'
               addDebit={this.addDebit} 
               accountBalance={this.state.accountBalance} 
             />
