@@ -42,7 +42,6 @@ class App extends Component {
       console.error("Error fetching data", error);
     }
   }
-  
 
   calculateBalance = (credits, debits) => {
     const totalCredits = credits.reduce((sum, credit) => sum + credit.amount, 0);
@@ -102,14 +101,14 @@ class App extends Component {
           )} />
           <Route exact path="/credits" render={() => (
             <Credits 
-              credits={this.state.credits}  // Use 'credits' instead of 'creditList'
+              credits={this.state.credits}  
               addCredit={this.addCredit} 
               accountBalance={this.state.accountBalance} 
             />
           )} />
           <Route exact path="/debits" render={() => (
             <Debits 
-              debits={this.state.debits}  // Use 'debits' instead of 'debitList'
+              debits={this.state.debits}  
               addDebit={this.addDebit} 
               accountBalance={this.state.accountBalance} 
             />
