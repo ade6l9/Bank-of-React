@@ -114,7 +114,7 @@ Data from these endpoints is fetched upon loading the app, and the values are in
 ---
 ## Github Pages
 
-
+https://ade6l9.github.io/bank-of-react/
 
 ## Contributor
 Adelina Dautovic <br>
